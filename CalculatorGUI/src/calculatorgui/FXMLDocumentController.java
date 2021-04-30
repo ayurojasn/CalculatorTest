@@ -155,28 +155,75 @@ public class FXMLDocumentController implements Initializable {
             display.setText("");
         }
 
+        else if(event.getSource() == tenPow){
+            data = Float.parseFloat(display.getText());
+            operation = 7; //tenPow
+            display.setText("");
+        }
+
+        else if(event.getSource() == sqrt){
+            data = Float.parseFloat(display.getText());
+            operation = 8; //tenPow
+            display.setText("");
+        }
+
+        else if(event.getSource() == nFact){
+            data = Float.parseFloat(display.getText());
+            operation = 9; //Fact
+            display.setText("");
+        }
+
+        else if(event.getSource() == log){
+            data = Float.parseFloat(display.getText());
+            operation = 10; //Log
+            display.setText("");
+        }
+
         else if (event.getSource() == equals) {
-            float secondOperand = Float.parseFloat(display.getText());
+            float secondOperand;
             switch (operation) {
                 case 1: //Addition
+                    secondOperand = Float.parseFloat(display.getText());
                     float ans = Calculadora.add(data, secondOperand);
                     display.setText(String.valueOf(ans));break;
                 case 2: //Subtraction
+                    secondOperand = Float.parseFloat(display.getText());
                     ans = Calculadora.substract(data, secondOperand);
                     display.setText(String.valueOf(ans));break;
                 case 3: //Mul
+                    secondOperand = Float.parseFloat(display.getText());
                     ans = Calculadora.multiply(data, secondOperand);
                     display.setText(String.valueOf(ans));break;
                 case 4: //Div
                     ans = 0f;
+                    secondOperand = Float.parseFloat(display.getText());
                     ans = Calculadora.div(data, secondOperand);                    
                     display.setText(String.valueOf(ans));break;
-                case 5://Mod TALLER Pow sqrt Fact Log
+                case 5://Mod TALLER
+                    secondOperand = Float.parseFloat(display.getText());
                     ans = Calculadora.mod(data, secondOperand);
                     display.setText(String.valueOf(ans));
                     break;
                 case 6://Signo TALLER
                     ans = Calculadora.sign(data);
+                    System.out.println(ans);
+                    display.setText(String.valueOf(ans));
+                    break;
+                case 7://tenPow TALLER
+                    ans = 0f;
+                    ans = (float) Calculadora.powOfTen(data);
+                    display.setText(String.valueOf(ans));
+                    break;
+                case 8://sqrt TALLER
+                    ans = (float) Calculadora.sqrt(data);
+                    display.setText(String.valueOf(ans));
+                    break;
+                case 9://Fact TALLER
+                    ans = (float) Calculadora.factorial(data);
+                    display.setText(String.valueOf(ans));
+                    break;
+                case 10://Log TALLER
+                    ans = (float) Calculadora.log(data);
                     display.setText(String.valueOf(ans));
                     break;
             }
