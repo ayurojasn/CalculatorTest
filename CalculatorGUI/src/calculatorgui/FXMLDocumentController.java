@@ -142,6 +142,19 @@ public class FXMLDocumentController implements Initializable {
             operation = 4; //Division
             display.setText("");
         }
+        //AÑADIDO PARA EL TALLER
+        else if (event.getSource() == mod) {
+            data = Float.parseFloat(display.getText());
+            operation = 5; //Mod
+            display.setText("");
+        }
+
+        else if (event.getSource() == signo) {
+            data = Float.parseFloat(display.getText());
+            operation = 6; //Signo
+            display.setText("");
+        }
+
         else if (event.getSource() == equals) {
             float secondOperand = Float.parseFloat(display.getText());
             switch (operation) {
@@ -158,6 +171,14 @@ public class FXMLDocumentController implements Initializable {
                     ans = 0f;
                     ans = Calculadora.div(data, secondOperand);                    
                     display.setText(String.valueOf(ans));break;
+                case 5://Mod TALLER Pow sqrt Fact Log
+                    ans = Calculadora.mod(data, secondOperand);
+                    display.setText(String.valueOf(ans));
+                    break;
+                case 6://Signo TALLER
+                    ans = Calculadora.sign(data);
+                    display.setText(String.valueOf(ans));
+                    break;
             }
         }
     }

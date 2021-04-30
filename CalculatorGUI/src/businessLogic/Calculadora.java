@@ -8,6 +8,8 @@ package businessLogic;
 /**
  *
  * @author Anabel
+ * @author Juliana
+ * @author Fabio
  */ 
 public class Calculadora {
     
@@ -30,4 +32,30 @@ public class Calculadora {
     {
         return a/b;
     }
+
+    public static float mod(float a, float b) {return a%b;}
+
+    public static float sign(float a) {
+        System.out.println(a*-1);
+        return ((-1)*a);
+    }
+
+    public static double powOfTen(float a) {return Math.pow(a,10);}
+
+    public static double sqrt(float a){return  Math.sqrt(a);}
+
+    public static double factorial(float a) {
+
+        int fact=1;
+
+        for(int i=1; i<=a;i++){
+            fact*=i;
+        }
+
+        return fact;
+
+    }
+
+    public static  double log(float a){return  Math.log(a);}
 }
+

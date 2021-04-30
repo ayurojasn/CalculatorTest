@@ -5,12 +5,9 @@
  */
 package businessLogic;
 
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
-import org.junit.Test;
-import static org.junit.Assert.*;
+import org.junit.*;
+
+import static org.junit.Assert.assertEquals;
 
 /**
  *
@@ -91,5 +88,58 @@ public class CalculadoraIT {
         assertEquals(expResult, result, 0.0);
         
     }
-    
+
+    /**
+     * Test of mod method, of class Calculadora.
+     */
+    @Test
+    public void testMod() {
+        System.out.println("mod");
+        float a = 20F;
+        float b = 5F;
+        float expResult = 0F;
+        float result = Calculadora.mod(a, b);
+        assertEquals(expResult, result, 0.0);
+
+    }
+    /**
+     * Test of sign method, of class Calculadora.
+     */
+    @Test
+    public void testSign() {
+        System.out.println("sign");
+        float a = 1F;
+        float expResult = -1F;
+        float result = Calculadora.sign(a);
+        assertEquals(expResult, result, 0.0);
+
+    }
+
+    /**
+     * Test of powOfTen method, of class Calculadora.
+     */
+    @Test
+    public void testPowOfTen() {
+        System.out.println("powOfTen");
+        float a = 2F;
+        float expResult = 1024F;
+        double result = Calculadora.powOfTen(a);
+        assertEquals(expResult, result, 0.0);
+
+    }
+
+    /**
+     * Test of sqrt method, of class Calculadora.
+     */
+    @Test
+    public void testSqrt() {
+        System.out.println("sqrt");
+        float a = 16F;
+        float expResult = 4F;
+        double result = Calculadora.sqrt(a);
+        assertEquals(expResult, result, 0.0);
+
+    }
+
+
 }
