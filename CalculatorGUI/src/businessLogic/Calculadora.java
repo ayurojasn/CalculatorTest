@@ -4,7 +4,6 @@
  * and open the template in the editor.
  */
 package businessLogic;
-
 /**
  *
  * @author Anabel
@@ -63,6 +62,10 @@ public class Calculadora {
             return str.substring(0,str.length()-1);
         }
         return "";
+    }
+
+    public static boolean justNumber(String s){
+        return s.matches("[0-9]+[0-9]*");
     }
 }
 

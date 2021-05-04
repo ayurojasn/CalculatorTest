@@ -184,6 +184,13 @@ public class FXMLDocumentController implements Initializable {
             display.setText(Calculadora.deleteL(text));
         }
 
+        else if(event.getSource() == coma){
+            String text = display.getText();
+            if(Calculadora.justNumber(text)){
+                display.setText(text+',');
+            }
+        }
+
         else if (event.getSource() == equals) {
             float secondOperand;
             switch (operation) {
