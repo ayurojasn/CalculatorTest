@@ -57,5 +57,12 @@ public class Calculadora {
     }
 
     public static  double log(float a){return  Math.log(a);}
+
+    public static String deleteL(String str){
+        if(str.length() > 1){
+            return str.substring(0,str.length()-1);
+        }
+        return "";
+    }
 }
 

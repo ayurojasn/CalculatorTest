@@ -181,7 +181,7 @@ public class FXMLDocumentController implements Initializable {
 
         else if(event.getSource() == back){
             String text = display.getText();
-            display.setText(deleteL(text));
+            display.setText(Calculadora.deleteL(text));
         }
 
         else if (event.getSource() == equals) {
@@ -235,12 +235,7 @@ public class FXMLDocumentController implements Initializable {
         }
     }
 
-    private String deleteL(String str){
-        if(str.length() > 1){
-            return str.substring(0,str.length()-1);
-        }
-        return "";
-    }
+
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
