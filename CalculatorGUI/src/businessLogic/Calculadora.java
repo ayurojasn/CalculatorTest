@@ -29,7 +29,17 @@ public class Calculadora {
     
     public static float div(float a, float b)
     {
-        return a/b;
+        float result;
+
+           result = a/b;
+
+           if(Float.isInfinite(result) || Float.isNaN(result)){
+               throw new ArithmeticException("Not finite");
+           }
+           else{
+               return result;
+           }
+
     }
 
     public static float mod(float a, float b) {
@@ -64,15 +74,27 @@ public class Calculadora {
 
         int fact=1;
 
-        for(int i=1; i<=a;i++){
-            fact*=i;
+        if(a<0){
+            throw new ArithmeticException("Is negative");
         }
 
-        return fact;
+        else {
+            for (int i = 1; i <= a; i++) {
+                fact *= i;
+            }
 
+            return fact;
+        }
     }
 
-    public static  double log(float a){return  Math.log(a);}
+    public static  double log(float a){
+
+        if(a<0){
+            throw new ArithmeticException("Is negative");
+        }
+
+        return  Math.log(a);
+    }
 
     public static String deleteL(String str){
         if(str.length() > 1){
