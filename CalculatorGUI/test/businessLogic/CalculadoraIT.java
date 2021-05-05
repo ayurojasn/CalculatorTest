@@ -51,7 +51,7 @@ public class CalculadoraIT {
      * Test of substract method, of class Calculadora.
      */
     @Test
-    public void testSubstract() {
+    public void testSubstract1() {
         System.out.println("substract");
         float a = 10F;
         float b = 5F;
@@ -61,11 +61,57 @@ public class CalculadoraIT {
         
     }
 
+    @Test
+    public void testSubstract2() {
+        System.out.println("substract");
+        float a = -3F;
+        float b = 5F;
+        float expResult = -8F;
+        float result = Calculadora.substract(a, b);
+        assertEquals(expResult, result, 0.0);
+
+    }
+
+    @Test
+    public void testSubstract3() {
+        System.out.println("substract");
+        float a = 0F;
+        float b = 0F;
+        float expResult = 0F;
+        float result = Calculadora.substract(a, b);
+        assertEquals(expResult, result, 0.0);
+
+    }
+
+    @Test
+    public void testSubstract4() {
+        System.out.println("substract");
+        float a = -4F;
+        float b = -5F;
+        float expResult = 1F;
+        float result = Calculadora.substract(a, b);
+        assertEquals(expResult, result, 0.0);
+
+    }
+
+    @Test
+    public void testSubstract5() {
+        System.out.println("substract");
+        float a = 10F;
+        float b = 10F;
+        float expResult = 0F;
+        float result = Calculadora.substract(a, b);
+        assertEquals(expResult, result, 0.0);
+
+    }
+
+
+
     /**
      * Test of multiply method, of class Calculadora.
      */
     @Test
-    public void testMultiply() {
+    public void testMultiply1() {
         System.out.println("multiply");
         float a = 7F;
         float b = 2F;
@@ -73,6 +119,46 @@ public class CalculadoraIT {
         float result = Calculadora.multiply(a, b);
         assertEquals(expResult, result, 0.0);
         
+    }
+    @Test
+    public void testMultiply2() {
+        System.out.println("multiply");
+        float a = 7F;
+        float b = 0F;
+        float expResult = 0F;
+        float result = Calculadora.multiply(a, b);
+        assertEquals(expResult, result, 0.0);
+
+    }
+    @Test
+    public void testMultiply3() {
+        System.out.println("multiply");
+        float a = 7F;
+        float b = -1F;
+        float expResult = -7F;
+        float result = Calculadora.multiply(a, b);
+        assertEquals(expResult, result, 0.0);
+
+    }
+    @Test
+    public void testMultiply4() {
+        System.out.println("multiply");
+        float a = 2.5F;
+        float b = 2F;
+        float expResult = 5F;
+        float result = Calculadora.multiply(a, b);
+        assertEquals(expResult, result, 0.0);
+
+    }
+    @Test
+    public void testMultiply5() {
+        System.out.println("multiply");
+        float a = -7F;
+        float b = -2F;
+        float expResult = 14F;
+        float result = Calculadora.multiply(a, b);
+        assertEquals(expResult, result, 0.0);
+
     }
 
     /**
@@ -93,7 +179,7 @@ public class CalculadoraIT {
      * Test of mod method, of class Calculadora.
      */
     @Test
-    public void testMod() {
+    public void testMod1() {
         System.out.println("mod");
         float a = 20F;
         float b = 5F;
@@ -102,6 +188,41 @@ public class CalculadoraIT {
         assertEquals(expResult, result, 0.0);
 
     }
+
+    @Test
+    public void testMod2() {
+        System.out.println("mod");
+        float a = 20F;
+        float b = 3F;
+        float expResult = 2F;
+        float result = Calculadora.mod(a, b);
+        assertEquals(expResult, result, 0.0);
+
+    }
+
+    @Test
+    public void testMod3() {
+        System.out.println("mod");
+        float a = 20F;
+        float b = -3F;
+        float expResult = 2F;
+        float result = Calculadora.mod(a, b);
+        assertEquals(expResult, result, 0.0);
+
+    }
+
+    @Test
+    public void testMod4() {
+        System.out.println("mod");
+        float a = -20F;
+        float b = 3F;
+        float expResult = -2F;
+        float result = Calculadora.mod(a, b);
+        assertEquals(expResult, result, 0.0);
+
+    }
+
+
     /**
      * Test of sign method, of class Calculadora.
      */
@@ -119,10 +240,50 @@ public class CalculadoraIT {
      * Test of powOfTen method, of class Calculadora.
      */
     @Test
-    public void testPowOfTen() {
+    public void testPowOfTen1() {
         System.out.println("powOfTen");
         float a = 2F;
         float expResult = 1024F;
+        double result = Calculadora.powOfTen(a);
+        assertEquals(expResult, result, 0.0);
+
+    }
+
+    @Test
+    public void testPowOfTen2() {
+        System.out.println("powOfTen");
+        float a = 0F;
+        float expResult = 0F;
+        double result = Calculadora.powOfTen(a);
+        assertEquals(expResult, result, 0.0);
+
+    }
+
+    @Test
+    public void testPowOfTen3() {
+        System.out.println("powOfTen");
+        float a = 1F;
+        float expResult = 1F;
+        double result = Calculadora.powOfTen(a);
+        assertEquals(expResult, result, 0.0);
+
+    }
+
+    @Test
+    public void testPowOfTen4() {
+        System.out.println("powOfTen");
+        float a = 3F;
+        float expResult = 59049;
+        double result = Calculadora.powOfTen(a);
+        assertEquals(expResult, result, 0.0);
+
+    }
+
+    @Test
+    public void testPowOfTen5() {
+        System.out.println("powOfTen");
+        float a = -2F;
+        float expResult = -1024;
         double result = Calculadora.powOfTen(a);
         assertEquals(expResult, result, 0.0);
 

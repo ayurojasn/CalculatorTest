@@ -32,7 +32,16 @@ public class Calculadora {
         return a/b;
     }
 
-    public static float mod(float a, float b) {return a%b;}
+    public static float mod(float a, float b) {
+        float result;
+
+        result = a%b;
+        if(Float.isNaN(result)){
+            throw new ArithmeticException("Is NaN");
+        }else{
+            return result;
+        }
+    }
 
     public static float sign(float a) {
         System.out.println(a*-1);
@@ -41,7 +50,15 @@ public class Calculadora {
 
     public static double powOfTen(float a) {return Math.pow(a,10);}
 
-    public static double sqrt(float a){return  Math.sqrt(a);}
+    public static double sqrt(float a){
+        double result = Math.sqrt(a);
+
+        if(Double.isNaN(result)){
+            throw new ArithmeticException("Is imaginary");
+        }else{
+            return result;
+        }
+    }
 
     public static double factorial(float a) {
 
